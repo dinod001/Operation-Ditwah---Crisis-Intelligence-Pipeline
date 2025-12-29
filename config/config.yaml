@@ -1,0 +1,113 @@
+### API Providers ###
+providers:
+  enabled:
+    - openai
+    - google
+    - groq
+  disabled:
+    - anthropic
+  default: openai
+
+### Model Selection ###
+models:
+  auto_routing: true
+  reasoning_techniques:
+    - cot
+    - tot
+    - cot_reasoning
+    - tot_reasoning
+    - chain_of_thought
+    - tree_of_thought
+
+### Default LLM Parameters ###
+defaults:
+  temperature: 0.2
+  max_tokens: 1000
+  top_p: 1.0
+
+  # parameter rcommendation by task type
+  by_task:
+    extraction:
+      temperature: 0.0
+      max_tokens: 500
+    classification:
+      temperature: 0.0
+      max_tokens: 50
+    generation:
+      temperature: 0.7
+      max_tokens: 1500
+    reasoning:
+      temperature: 0.3
+      max_tokens: 2000
+    creative:
+      temperature: 1.0
+      max_tokens: 2000
+
+### Token Management ###
+tokens:
+  estimation:
+    enabled: true
+    provider: tiktoken
+    warn_threshold_percent: 15
+
+  context_management:
+    hard_prompt_cap: null
+    overflow_strategy: truncate
+    reserve_output_tokens: 1000
+
+  message_overhead_tokens: 4
+
+### Retry & Error Handling ###
+retry:
+  max_retries: 3
+  backoff:
+    base_seconds: 0.5
+    max_seconds: 30
+    jitter_factor: 0.25
+  retryable_errors:
+    - rate_limit
+    - server_error
+    - timeout
+    - context_length
+  timeout_seconds: 60
+
+### Logging ###
+logging:
+  enabled: true
+  output_dir: logs
+  output_file: runs.csv
+  log_tokens: true
+  log_latency: true
+  log_retries: true
+  log_cost_estimates: true
+  cost_estimation:
+    enabled: true
+    disclaimer: "Prices change frequently. Check provider pricing pages for accurate costs."
+  console_verbosity: info
+
+### Safety & Validation ###
+safety:
+  prompt_injection_detection: true
+  pii_detection: false
+  sanitize_inputs: true
+  max_input_length: 100000
+
+### JSON & Structured Outputs ###
+structured_outputs:
+  auto_repair: true
+  validate_schema: true
+  max_repair_attempts: 2
+
+### Development Settings ###
+development:
+  cache_responses: false
+  dry_run: false
+  debug: false
+
+### Feature Flags ###
+features:
+  experimental: false
+  langchain_integration: true
+  llamaindex_integration: true
+  tool_calling: true
+  function_calling: true

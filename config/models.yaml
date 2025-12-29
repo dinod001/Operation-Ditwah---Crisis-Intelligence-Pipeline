@@ -1,0 +1,16 @@
+## Models ##
+
+openai:
+  general: gpt-4o-mini
+  strong: gpt-4o
+  reason: o3-mini 
+
+google:
+  general: gemini-2.5-flash
+  strong: gemini-2.5-pro
+  reason: gemini-2.5-pro      
+
+groq:
+  general: llama-3.1-8b-instant
+  strong: llama-3.1-70b-versatile
+  reason: deepseek-r1-distill-llama-70b
