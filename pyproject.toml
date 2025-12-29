@@ -1,0 +1,57 @@
+[project]
+name = "Operation Ditwah – Crisis Intelligence Pipeline"
+version = "1.0.0"
+description = "A crisis intelligence pipeline for disaster response"
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.5.0",
+    "jsonschema>=4.20.0",
+    "pyyaml>=6.0.1",
+    "tqdm>=4.66.0",
+    "pandas>=2.1.0",
+    "jupyter>=1.0.0",
+    "tiktoken>=0.5.2",
+    "openai>=1.12.0",
+    "google-genai>=1.0.0",
+    "groq>=0.4.0",
+    "llama-index-core>=0.10.0",
+    "langchain>=0.1.0",
+    "langchain-openai>=0.0.5",
+    "langchain-google-genai>=0.0.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.12.0",
+    "flake8>=7.0.0",
+    "mypy>=1.8.0",
+    "pytest>=7.4.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["utils*"]
+exclude = ["logs*", "data*", "config*", "notebooks*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
