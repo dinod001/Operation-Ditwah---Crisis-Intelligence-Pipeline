@@ -4,7 +4,7 @@ from typing import Literal, Optional, Any
 def pick_encoding(
     provider: Literal["openai", "google", "groq"], model: str
 ) -> tiktoken.Encoding:
-     if provider == "openai":
+    if provider == "openai":
         if any(x in model.lower() for x in ["gpt-4o", "gpt-4", "o3", "o1"]):
             try:
                 return tiktoken.get_encoding("o200k_base")

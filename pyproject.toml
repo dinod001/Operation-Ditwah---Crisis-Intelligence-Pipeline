@@ -1,5 +1,5 @@
 [project]
-name = "Operation Ditwah – Crisis Intelligence Pipeline"
+name = "operation-ditwah-crisis-intelligence-pipeline"
 version = "1.0.0"
 description = "A crisis intelligence pipeline for disaster response"
 requires-python = ">=3.11"
@@ -19,6 +19,7 @@ dependencies = [
     "langchain>=0.1.0",
     "langchain-openai>=0.0.5",
     "langchain-google-genai>=0.0.6",
+    "openpyxl>=3.1.2",
 ]
 
 [project.optional-dependencies]
