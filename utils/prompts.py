@@ -86,7 +86,7 @@ PROMPTS: Dict[str, PromptSpec] = {
         id="cot_reasoning.v1",
         purpose="Chain-of-thought style reasoning (use with reasoning models only)",
         template=(
-            "You are ${role}. Solve the problem carefully.\n"
+            "You are ${role}. Apply the specified crisis-prioritization rules exactly.\n"
             "Problem: ${problem}\n\n"
             "First, outline your reasoning steps briefly.\n"
             "Then provide the final answer clearly marked under 'Answer:'.\n"
