@@ -1,0 +1,5 @@
+timestamp,provider,model,technique,latency_ms,input_tokens_est,context_tokens_est,total_est,prompt_tokens_actual,completion_tokens_actual,total_tokens_actual,retry_count,backoff_ms_total,overflow_handled,cost_estimate_usd,notes
+2025-12-30T19:10:40.184671,openai,o3-mini,cot,3385,236,0,239,236,147,383,0,0,False,~$0.000824,
+2025-12-30T19:10:42.618395,openai,o3-mini,cot,2431,233,0,236,233,275,508,0,0,False,~$0.001333,
+2025-12-30T19:10:47.959461,openai,o3-mini,cot,5338,234,0,237,234,211,445,0,0,False,~$0.001078,
+2025-12-30T19:11:11.609805,openai,o3-mini,tot,23594,426,0,429,426,3744,4170,0,0,False,~$0.015402,
