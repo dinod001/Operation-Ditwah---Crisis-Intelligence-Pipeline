@@ -7,10 +7,20 @@ from typing import Optional
 from typing_extensions import Literal
 
 class CrisisEvent(BaseModel):
-    district: Literal["Colombo", "Gampaha", "Kandy", "Kalutara", "Galle"]
+    district: Literal[
+        "Colombo", 
+        "Gampaha", 
+        "Kandy", 
+        "Kalutara", 
+        "Galle", 
+        "Matara", 
+        "Ratnapura", 
+        "Nuwara Eliya", 
+        "Kegalle"
+    ]
     flood_level_meters: Optional[float] = None
     vicm_count: int = 0
-    main_need: str
+    main_need: str = "General Assistance"
     status: Literal["Critical", "Warning", "Stable"]
 
     
