@@ -119,6 +119,7 @@ PROMPTS: Dict[str, PromptSpec] = {
             "- DO NOT include markdown formatting like ```json.\n"
             "- Follow the exact field order as defined in the schema.\n"
             "- FOR 'main_need': Analyze the text and infer the primary requirement. "
+            "- LOCATION: Extract both District and Province. If a city or district is mentioned (e.g., 'Matara'), automatically fill its Province (e.g., 'Southern'). If only a Province is mentioned, set district to null."
             "If not explicitly stated, use your best judgment (e.g., 'Rescue' for trapped people, 'Food/Water' for displaced).\n"
             "- If a value is missing and cannot be inferred, use the default value.\n\n"
             "Text:\n${text}\n\n"
